@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+
+
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        document.domain = "live.com";
+        var chatMessageType = 0; // just a const definition for readabiity        
+        var Toast = function MailIM$Toast(title, text, id, messageType)
+        {
+            //
+            this.title = title;
+            this.text = text;
+            this.id = id;
+            this.messageType = messageType;
+            this.isChatMessage = (messageType == chatMessageType);
+            this.ignore = false;
+        }
+        
+        Toast.prototype =
+        {
+            title: null,
+            text: null,
+            id: null,
+            isChatMessage: false,
+            messageType: -1,
+            ignore: false,
+            
+            isSame: function Toast$isSame(itemTemplate)
+            {
+                if (this.messageType == itemTemplate.messageType)
+                {
+                    if (this.isChatMessage)
+                    {
+                        if (this.id == itemTemplate.id)
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        if ((this.text == itemTemplate.text) && (this.title == itemTemplate.title))
+                        {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+        }
+        
+        //
+        // A bunch of globals limited to the scope of this page. These could be members of one global object
+        // but that would mean event handling needlessly cumbersome
+        //
+        var gToasts = [];
+        var gTitleElt = null;
+        var gMessageElt = null;
+        var gContextFull = null;
+        var gContextMini = null;
+        
+        function setupGlobals()
+        {
+            //
+    
+            gTitleElt = document.getElementById("Title");
+            gMessageElt = document.getElementById("Message");
+            gContextFull = window.top.document.getElementById("IMToastFull");
+            gContextMini = window.top.document.getElementById("IMToastMini");
+        }
+
+        function clearGlobals()
+        {
+            //
+
+            gTitleElt = null;
+            gMessageElt = null;
+            gContextFull = null;
+            gContextMini = null;
+        }
+
+        function create(title, message, id, messageType)
+        {
+            //
+
+            var item = new Toast(title, message, id, messageType);
+            gToasts.push(item);
+            displayToast(item);
+        }
+        
+        function displayToast(toast)
+        {
+            //
+
+            gTitleElt.innerHTML = toast.title;
+            gMessageElt.innerHTML = toast.text;
+            if (gContextMini)
+            {
+                gContextMini.style.display = "none";
+            }
+            gContextFull.style.display = "block";
+        }
+
+        function ignoreToastsOfType(itemTemplate)
+        {
+            //
+
+            for(var i = gToasts.length; i--;)
+            {      
+                var item = gToasts[i];
+                if (item.isSame(itemTemplate))
+                {
+                    item.ignore = true;
+                }
+            }
+        }
+                
+        function clearToastsOfType(itemTemplate)
+        {
+            //
+
+            var lastIndex = gToasts.length - 1;
+            ignoreToastsOfType(itemTemplate);
+            if ((lastIndex >= 0) && gToasts[lastIndex].ignore)
+            {
+                showNextToast(gToasts[lastIndex]);
+            }
+        }
+        
+        function showNextToast()
+        {
+            //
+            var top = null;
+
+            //
+            for(var i = gToasts.length; i--;)
+            {      
+                var item = gToasts[i];
+                if (item.ignore)
+                {
+                    //
+                    gToasts.pop();
+                }
+                else
+                {
+                    //
+                    top = item;
+                    break;
+                }
+            }
+            
+            if (top)
+            {
+                displayToast(top);
+            }            
+            else
+            {
+                gContextFull.style.display = "none";
+            }
+        }
+        
+        function closeToast()
+        {
+            //
+
+            if (gToasts.length > 0)
+            {
+                var toast = gToasts.pop();
+                ignoreToastsOfType(toast);
+                showNextToast();
+            }
+        }
+        
+        function clearToastsForChat(id)
+        {
+            //
+
+            var found = null;
+            for(var i = gToasts.length; i--;)
+            {      
+                var item = gToasts[i];
+                if (item.isChatMessage && (item.id == id))
+                {
+                    found = item;
+                    break;
+                }
+            }
+            if (found)
+            {
+                clearToastsOfType(found);
+            }
+        }
+        
+        function openIM()
+        {
+            //
+            var id = null;
+            var toClose = null;
+            if (gToasts.length > 0)
+            {
+                toClose = gToasts[gToasts.length - 1];                
+                if (toClose)
+                {
+                    if (toClose.isChatMessage && !toClose.ignore)
+                    {
+                        id = toClose.id;
+                    }
+                    clearToastsOfType(toClose);
+                }
+            }
+            if (id)
+            {
+                try
+                {
+                    var imFrame = window.top.document.getElementById("IMFrame");
+                    if (imFrame)
+                    {
+                        imFrame.contentWindow.UIRespondToChat(id);
+                    }
+                    imFrame = null;
+                }
+                catch(e)
+                {
+                }
+            }
+        }
+        
+        function closeAll()
+        {
+            //
+            
+            while(gToasts.pop()); // flush out all the toasts
+            gContextFull.style.display = "none";
+        }
+        
+        function minimize()
+        {
+            //
+
+            gContextFull.style.display = "none";
+            gContextMini.style.display = "block";
+        }
+    </script>
+
+<link rel="stylesheet" href="BuddyList_data/WebIM.css" type="text/css">
+   <link rel="stylesheet" href="TodayLight_data/hig.css" type="text/css">
+
+
+    <style type="text/css">
+        .ToastFull .HeaderInner  
+        {
+        	
+        	background-image: url('http://gfx1.hotmail.com/mail/uxp/w4/m1/pr06/h/g.png'); 
+        	
+        }
+        .Body
+        {      	
+            margin          : 0;
+            overflow        : hidden;
+            padding         : 0;
+        }              
+    </style>
+<script charset="utf-8" id="injection_graph_func" src="081217_fichiers/injection_graph_func.js"></script><link href="081217_fichiers/skypeplugin_dropdownmenu.css" type="text/css" rel="stylesheet" charset="utf-8" id="_skypeplugin_dropdownmenu_css"><script id="_nameHighlight_injection"></script><link class="skype_name_highlight_style" href="081217_fichiers/injection_nh_graph.css" type="text/css" rel="stylesheet" charset="utf-8" id="_injection_graph_nh_css"></head><body id="Body" class="Body  NotIE6" onload="setupGlobals();" onunload="closeToast();clearGlobals();">
+    <div id="Full" class="ToastFull">
+        <div class="Header c_hta">
+            <div class="HeaderInner">
+                <img src="BuddyList_data/chat16.png">
+                <div id="Title" class="Text"></div>
+                <!-- remove anchors for Safari -->
+                <div class="Minimize" title="Réduire">
+                    <a href="javascript:;" onclick="minimize();return false;">
+                        <img src="ToastFull_data/toast_minimize.gif" border="0">
+                    </a>
+                </div>
+                <div class="Close" title="Fermer">
+                    <a href="javascript:;" onclick="closeToast();return false;">
+                        <img src="BuddyList_data/glyph_close_rest.gif" border="0">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="MessageTable" class="MessageTable" onclick="openIM(); return false;">
+            <div id="MessageCell" class="MessageCell">
+                <div id="Message" class="Message"></div>
+            </div>
+        </div>
+    </div>
+</body></html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="Dwarf" class="fr.lacnet.munchkin.mdm.card.door.race.DwarfBean">
+		<constructor-arg><value>DwarfBean</value></constructor-arg>
+	</bean>
+
+	<bean id="Elf" class="fr.lacnet.munchkin.mdm.card.door.race.ElfBean">
+		<constructor-arg><value>ElfBean</value></constructor-arg>
+	</bean>
+
+	<bean id="HalfBreed" class="fr.lacnet.munchkin.mdm.card.door.race.HalfBreed">
+		<constructor-arg><value>HalfBreedBean</value></constructor-arg>
+	</bean>
+
+	<bean id="Halfling" class="fr.lacnet.munchkin.mdm.card.door.race.HalflingBean">
+		<constructor-arg><value>HalflingBean</value></constructor-arg>
+	</bean>
+</beans>

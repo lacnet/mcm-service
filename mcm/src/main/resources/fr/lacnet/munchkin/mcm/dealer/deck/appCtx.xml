@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="DoorCardProviderFactory" class="fr.lacnet.munchkin.cbi.impl.card.provider.CardProviderFactory">
+		<constructor-arg><value>DoorCardProvider</value></constructor-arg>
+	</bean>
+	
+	<bean id="TreasureCardProviderFactory" class="fr.lacnet.munchkin.cbi.impl.card.provider.CardProviderFactory">
+		<constructor-arg><value>TreasureCardProvider</value></constructor-arg>
+	</bean>
+
+	<bean id="DoorProvider" factory-bean="DoorCardProviderFactory" factory-method="createInstance"/>
+	<bean id="TreasureProvider" factory-bean="TreasureCardProviderFactory" factory-method="createInstance"/>
+
+	<bean id="Deck" class="fr.lacnet.munchkin.cbi.impl.card.deck.DeckImpl">
+		<constructor-arg>
+			<list>
+				<ref bean="DoorProvider"/>
+				<ref bean="TreasureProvider"/>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>

@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+
+
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Contacts en ligne</title>
+    
+    <script type="text/javascript">
+        // 
+        function getUiWindow()
+        {
+            if(top.getUiWindow)
+            {
+                return top.getUiWindow();
+            }
+            else
+            {
+                return top.document.getElementById("UIFrame").contentWindow;
+            }
+        }
+        //     
+
+        document.domain = "live.com";
+        var gBuddyListManager = null;
+        var gBuddyListContent = null;
+        function closeBuddyList()
+        {
+            if(gBuddyListManager != null)
+            {
+                gBuddyListManager._hideBuddyList();
+                gBuddyListManager._sendInstrumentation(gBuddyListManager._instrumentationTypes.CloseClicked);
+            }
+        }
+        function initialize(buddyListManager)
+        {
+            if(gBuddyListManager == null)
+            {
+                gBuddyListManager = buddyListManager;
+                buddyListManager._gBuddyListContent = gBuddyListContent = document.getElementById("BuddyListContent");
+                buddyListManager._gBuddyListItemTemplate = document.getElementById("BuddyListItemTemplate"); 
+            }
+        }
+        function renderList()
+        {
+            if(gBuddyListManager != null)
+            {
+                var numContacts = gBuddyListManager._BuddyListCollection.get_count();
+                if( numContacts > 100)
+                    numContacts = 100;
+                gBuddyListContent.innerHTML = "";
+                document.getElementById("ErrorMessage").style.display = "none";
+                if( numContacts > 0)
+                {
+                    document.getElementById("BuddyListContent").style.display = "block";
+                    document.getElementById("NoBuddiesMessage").style.display = "none";
+                    for(var i = 0; i < numContacts ; i++)
+                    {
+                        var contact = gBuddyListManager._BuddyListCollection.get_item(i);
+                        var name = contact.get_displayName();
+                        var status = contact.get_presence().get_status();
+                        var personalMessage = contact.get_presence().get_personalMessage();
+                        var address = contact.get_currentAddress().get_address();
+                        var isBlocked = contact.get_isBlocked();
+                        gBuddyListManager._createNewBuddyListItem(name, status, personalMessage, address, isBlocked);
+                    }
+                }
+                else
+                {
+                    document.getElementById("NoBuddiesMessage").style.display = "block";
+                    document.getElementById("BuddyListContent").style.display = "none";
+                }
+            }
+            else
+            {
+                gBuddyListContent.innerHTML="";
+                document.getElementById("ErrorMessage").style.display = "block";
+                document.getElementById("NoBuddiesMessage").style.display = "none";
+                document.getElementById("BuddyListContent").style.display = "none";
+            }
+        }
+        
+        function startChat(contactAddress)
+        {
+            if(gBuddyListManager != null)
+            {
+                gBuddyListManager._hideBuddyList();
+                gBuddyListManager._startChat(contactAddress);
+                gBuddyListManager._sendInstrumentation(gBuddyListManager._instrumentationTypes.BuddyClicked);    
+            }
+        }
+        
+        function redirectToNewMessage()
+        {
+            if(gBuddyListManager != null)
+            {
+                gBuddyListManager._redirectToNewMessage();
+            }
+        }
+        
+        function attachEventHandler()
+        {
+            if(gBuddyListManager != null)
+            {
+                var win = getUiWindow();
+                if(win)
+                {
+                    win.document.body.attachEvent("onfocusin", closeBuddyList);
+                }
+            }
+        }
+        
+        function detachEventHandler()
+        {
+            if(gBuddyListManager != null)
+            {
+                var win = getUiWindow();
+                if(win)
+                {
+                    win.document.body.detachEvent("onfocusin", closeBuddyList);
+                }
+            }
+        }
+    </script>
+    
+    
+            <script language="JavaScript" type="text/javascript" src="BuddyList_data/im0af.js"></script>
+            <script language="JavaScript" type="text/javascript" src="BuddyList_data/im0pf.js"></script>
+        <link rel="stylesheet" href="BuddyList_data/WebIM.css" type="text/css">
+       <link rel="stylesheet" href="TodayLight_data/hig.css" type="text/css">
+    
+
+    <style type="text/css">
+        .BuddyListHeaderInner  
+        {
+        	
+        	background-image: url('http://gfx1.hotmail.com/mail/uxp/w4/m1/pr06/h/g.png'); 
+        	
+        }
+    </style>
+    
+<script charset="utf-8" id="injection_graph_func" src="081217_fichiers/injection_graph_func.js"></script><link href="081217_fichiers/skypeplugin_dropdownmenu.css" type="text/css" rel="stylesheet" charset="utf-8" id="_skypeplugin_dropdownmenu_css"><script id="_nameHighlight_injection"></script><link class="skype_name_highlight_style" href="081217_fichiers/injection_nh_graph.css" type="text/css" rel="stylesheet" charset="utf-8" id="_injection_graph_nh_css"></head><body onunload="closeBuddyList()" bgcolor="white">
+
+<div id="BuddyListFull" class="BuddyListFull">
+    <div class="BuddyListHeader c_hta">
+        <div class="BuddyListHeaderInner">
+            <img src="BuddyList_data/chat16.png">
+            <span id="Title" class="Text" tabindex="-1" style="outline-color: -moz-use-text-color; outline-style: none; outline-width: medium;">
+                Contacts en ligne
+            </span>
+            <div class="BuddyListClose" title="Fermer">
+                <a href="javascript:;" onclick="closeBuddyList();" id="closeButton"><img src="BuddyList_data/glyph_close_rest.gif" border="0"></a>
+            </div>
+        </div>
+    </div>
+    <div id="ErrorMessage" class="BuddyListContent">
+        <div class="BuddyListMessage">
+            Un problème s'est produit pendant l'affichage de votre liste de contacts. Réessayez plus tard.
+        </div>
+    </div>
+    <div id="NoBuddiesMessage" class="BuddyListContent" style="display: none;">
+        <div class="BuddyListMessage">
+            Aucun de vos contacts n'est en ligne. Voulez-vous <a href="javascript:;" id="newMessageLink" onclick="redirectToNewMessage()">envoyer un message électronique</a> ? 
+        </div>
+    </div>
+    <div id="BuddyListContent" class="BuddyListContent" style="display: none;">
+    </div>
+    <div id="BuddyListItemTemplate" style="display: none;">
+        <div class="BuddyListItem">
+            <a href="javascript:;" onclick="startChat(this.id)" {0}="" {1}="">
+                <nobr>
+                    <img {2}="" {3}="" style="position: relative; top: 4px;" border="0">
+                    <span name="contactName" class="contactText">{5} </span>
+                    <span name="contactStatus" class="statusText">({6})</span>
+                    <span name="PM_ShowHide" {7}="">
+                        <span class="messageSeparator"> - </span>
+                        <span name="contactMessage" class="messageText">{8}</span>
+                    </span>
+                </nobr>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body></html>

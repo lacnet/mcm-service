@@ -1,0 +1,150 @@
+.SortSearchContainer{z-index:3;background-color:#BBD8FB;background-position:left bottom;background-repeat:repeat-x;height:2.15em;}
+.Managed .SortSearchContainer{position:absolute;top:0px;left:0em;right:0em;}
+.IE_M6 .Managed .SortSearchContainer{anchor:horizontal;behavior:expression(Anchor(this));width:100%;}
+.SortSearchContainerHidden{z-index:-1;display:none;}
+.SortSearchContainer .Toolbar{border:none;}
+.SortSearchContainer .ToolbarItem UL{padding:2px;}
+.SortSearchContainer .ToolbarItem UL A{padding:4px;}
+.c_m .GroupHeading{padding-top:4px;border-top:1px solid #CCC;}
+.ToolbarItemCheckbox INPUT{margin:0px;}
+BODY.IE_M7 .ToolbarItemCheckbox INPUT{margin-left:3px;}
+BODY.IE_M6 .ToolbarItemCheckbox INPUT{margin-left:3px;margin-right:3px;}
+.SortSearchContainer .ToolbarItemCheckbox{padding-top:0.4em;padding-left:10px;}
+.IE .SortSearchContainer .ToolbarItemCheckbox{padding-left:7px;}
+.SortSearchContainer .ToolbarItemFirst .c_ml{padding-left:10px;}
+.MessageListSplitPane{top:2.15em;margin-top:2px;z-index:2;}
+.Managed .MessageListSplitPane{position:absolute;display:block;left:0em;overflow:hidden;}
+.MessageListSplitPaneFull{bottom:0px;right:0px;}
+.BottomUnmanaged .MessageListSplitPaneFull{position:static;margin-top:0px;}
+.IE_M6 .MessageListSplitPaneFull{anchor:all;behavior:expression(Anchor(this));width:100%;height:100%;}
+.IE_M6 .BottomUnmanaged .MessageListSplitPaneFull, .IE_M6 .BottomUnmanaged .ReadingPaneSplitPaneFull{width:auto;height:1%;}
+.MessageListSplitPaneHidden{z-index:-1;display:none;}
+.MessageListItems{background-color:#ffffff;}
+.Unmanaged .MessageListItems{min-height:25em;}
+.IE_M6 .Unmanaged .MessageListItems{height:25em;}
+.Managed .MessageListItems{position:absolute;top:0px;bottom:25px;left:0px;right:0px;overflow-y:auto;overflow-x:hidden;}
+.IE_M6 .Managed .MessageListItems{anchor:all;behavior:expression(Anchor(this));width:100%;height:80%;}
+.PaginationContainer{background-color:#F3F7FD;height:1.8em;}
+.Managed .PaginationContainer{position:absolute;bottom:0px;left:0px;right:0px;}
+.IE_M6 .Managed .PaginationContainer{anchor:horizontal;behavior:expression(Anchor(this));width:100%;}
+.SplitterBar{position:absolute;}
+.IE_M6 .SplitterBar{overflow:hidden;background-color:white;}
+.SplitterBarHidden{z-index:-1;display:none;}
+.ReadingPaneSplitPane{z-index:0;display:block;border:1px solid #CCC;}
+.Managed .ReadingPaneSplitPane{position:absolute;bottom:0em;right:0em;}
+.ReadingPaneSplitPaneFull{top:0px;left:0px;}
+.BottomUnmanaged .ReadingPaneSplitPaneFull{position:static;margin-top:0px;}
+.IE_M6 .ReadingPaneSplitPaneFull{anchor:all;behavior:expression(Anchor(this));width:100%;height:100%;}
+.ReadingPaneSplitPaneHidden{z-index:-1;display:none;}
+.ReadingPaneSplitPaneFull .FullViewButton{display:none;}
+.ActionBar{background-color:#ffffff;}
+.Managed .ActionBar{position:absolute;top:0px;left:0px;right:0px;height:2.15em;}
+.IE_M6 .ActionBar{anchor:horizontal;behavior:expression(Anchor(this));width:100%;}
+.ReadingPaneContainer{background-color:#ffffff;margin-top:1px;}
+.Managed .ReadingPaneContainer{position:absolute;top:2.15em;bottom:0px;left:0em;right:0px;overflow-y:auto;overflow-x:auto;}
+.IE_M6 .Managed .ReadingPaneContainer{anchor:all;behavior:expression(Anchor(this));width:100%;height:80%;}
+.ReadingPaneContainerNoActionBar{top:0px !important;}
+.BottomUnmanaged .ReadMsgBody{overflow-x:hidden;}
+.BottomUnmanaged .ReadingPaneContainer.ExpandMessage .ReadMsgBody{overflow-x:visible;}
+.BottomUnmanaged .WithSkyscraper .ExpandMessageButton{display:block;}
+.InboxTable{width:100%;table-layout:fixed;border-collapse:collapse;}
+.IE .InboxTable{width:auto;}
+.IE_M6 .InboxTable{position:relative;}
+.InboxTable A{text-decoration:none;white-space:nowrap;}
+.IE_M6 .InboxTable A{text-decoration:none !important;}
+.InboxTable INPUT, .InboxTable IMG{padding:0px;margin:0px;border:none;}
+.IE_M7 .InboxTable IMG{vertical-align:middle;}
+.IE .InboxTable INPUT, .IE .ToolbarItemCheckbox INPUT{width:15px;}
+.InboxTable TD{padding-top:1px;padding-bottom:1px;overflow:hidden;border-bottom:1px solid #F0F0F0;cursor:pointer;white-space:nowrap;}
+.InboxTable .Ico, .InboxTable .Imp, .InboxTable .Att{padding-top:2px;padding-bottom:0px;}
+.IE_M6 .InboxTable .Ico, .IE_M6 .InboxTable .Imp, .IE_M6 .InboxTable .Att{padding-left:4px;}
+.InboxTable .Chk{padding-left:10px;padding-right:8px;}
+.InboxTable .Frm{padding-left:12px;text-overflow:ellipsis;}
+.InboxTable .Imp{padding-left:16px;}
+.InboxTable .Att{padding-left:4px;}
+.InboxTable .Sbj{padding-left:8px;text-overflow:ellipsis;}
+.InboxTable .Dat, .InboxTable .Siz{text-align:right;color:#888;padding-left:16px;padding-right:10px;font-weight:normal !important;}
+.InboxTable .CheckBoxCol{width:34px;}
+.InboxTable .IconCol{width:17px;}
+.InboxTable .FromCol{width:162px;}
+.InboxTable .ImportanceCol{width:25px;}
+.InboxTable .AttachmentCol{width:22px;}
+.InboxTable .DateCol, .InboxTable .SizeCol{width:96px;}
+.IE .InboxTable .CheckBoxCol{width:15px;}
+.IE .InboxTable .IconCol{width:17px;}
+.IE .InboxTable .FromCol{width:150px;}
+.IE .InboxTable .ImportanceCol{width:9px;}
+.IE .InboxTable .DateCol, .IE .InboxTable .SizeCol{width:80px;}
+.PageNavigation{padding-right:8px;}
+.PageNavigation UL{margin:0px;}
+.PageNavigation LI{height:100%;list-style:none;float:left;padding:4px 2px;}
+.PageNavigation LI A, .PageNavigation LI DIV{display:block;}
+.PageNavigationPrev{margin-left:6px;}
+.IE .PageNavigationPrev, .IE .PageNavigationNext{vertical-align:middle;}
+.PageNavigationMsgRange{float:left;padding:4px 10px;}
+.DragNDrop{position:absolute;z-index:1000;top:0px;left:0px;}
+.rtl .DragNDrop{width:15em;}
+.Firefox .DragNDrop, .Safari .DragNDrop{width:auto;}
+.DragNDrop .Content{position:relative;border:solid 1px #CCC;background-color:white;color:#444;z-index:2;padding-top:8px;padding-left:8px;padding-right:8px;padding-bottom:5px;white-space:nowrap;}
+.App.Managed .MasterSplitter{cursor:col-resize;}
+.ReadMsgContainer{padding:0px 12px;background-color:#FFFFFF;}
+.Unmanaged .ReadMsgContainer{min-height:25em;}
+.IE_M6 .Unmanaged .ReadMsgContainer{height:25em;}
+#Alt_Toolbar.ReadMessageAltToolbar{border:1px solid #ccc;border-top:none;background-color:#fff;}
+.ReadMsgHeader{height:auto !important;padding-bottom:5px;}
+BODY.IE .ReadMsgHeader, BODY.IE .ReadMsgContainer{height:1%;}
+.ReadMsgHeader TD{padding-right:4px;padding-bottom:2px;vertical-align:top;}
+.ReadMsgHeaderCol1{color:#888;white-space:nowrap;}
+.AttachmentContainer .AttachmentRow{padding-bottom:2px;}
+.AttachmentContainer .AttachmentCount td{vertical-align:bottom;}
+.AttachmentContainer .AttachmentCount .AttIcon{width:7px;padding-bottom:3px;}
+.AttachmentDownloadIframe{width:0px;height:0px;border-style:none;}
+BODY.IE .AttachmentDownloadIframe, BODY.Firefox .AttachmentDownloadIframe{display:none;}
+.ReadMsgHeader IMG{vertical-align:middle;}
+.IE .ReadMsgHeader IMG{vertical-align:bottom;}
+.ReadMsgSubject{font-size:1.46em;padding:12px 0px 8px 0px;}
+.ReadMsgHeader .SenderSafetyMsg{padding:0px 4px;}
+.ReadMsgHeader .SenderSafetyLinks{padding:0px 8px;display:inline-block;}
+.ReadMsgBody{padding:10px 0px;}
+.Unmanaged .ReadMsgBody{margin-bottom:3em;}
+.PlainTextMessageBody PRE{white-space:normal;}
+.MessageSelection{padding:8px 4px 6px;}
+.MessageSelection H2{font-size:132%;font-weight:bold;color:#444444;}
+.ReadMsgBody .ExternalClass a:link{text-decoration:underline;}
+.ReadMsgSafetyBar, .WideMessageBar{margin-top:8px;padding:3px 8px 5px 8px;height:auto !important;}
+.MessageLevel{vertical-align:bottom;}
+.SafetyBarPri-high{background-color:#FFAEB9;}
+.SafetyBarPri-medium, .WideMessageBar{background-color:#FFFFAE;}
+.SafetyBarPri-low{background-color:#FFFFFF;}
+.SafetyBarItem{padding:3px 4px;clear:both;}
+.SafetyBarItem A, .WideMessageBar A{margin:0px 20px;display:inline-block;}
+.SafetyBarItem A.FirstLink{margin-right:8px;}
+.SafetyBarItem A.LastLink{margin-left:8px;}
+.CalendarActionReqBar A{display:block;margin:4px 0px;padding:0px 8px;color:#000000;}
+.CalendarActionReqBar A *{vertical-align:middle;padding:4px 0px;}
+.ButtonList{background-color:#eceeee;padding-left:10px;padding-right:10px;}
+.ButtonList UL{padding:0em;margin:0em;list-style-type:none;list-style-image:none;}
+.ButtonList UL LI{float:left;margin:2px 0px;height:22px;}
+.ButtonList LI A{text-decoration:none;border:solid 1px transparent;position:relative;display:block;top:.25em;height:16px;width:16px;overflow:hidden;direction:ltr;outline:0em;}
+.ButtonList LI A:hover{text-decoration:none;}
+.ButtonList LI A.dropdown{color:#444;direction:inherit;width:90%;height:auto;}
+.ButtonList LI A.dropdown .caption{display:block;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width:85%;}
+.ButtonList A.ImageIcon{top:.4em;}
+.IE_M6 .ButtonList LI A{border:solid 1px #eeeeee;}
+.ButtonList LI IMG{position:relative;border:0px;}
+.ButtonList LI.Selected A{border:solid 1px #83AADA;background-color:#DDECFE;}
+.Menu{position:absolute;top:0px;left:0px;overflow:visible;}
+.Menu, .Menu DIV{min-width:15em;}
+.IE_M6 .Menu, .rtl.IE .Menu{width:15em;}
+.Menu .shadow{position:absolute;top:3px;left:3px;width:100%;height:100%;background-color:#000000;opacity:0.3;filter:alpha(opacity=30);}
+.Menu UL{position:relative;border:solid 1px #CCC;background-color:#FCFCFC;z-index:1;padding:0px;margin:0px;list-style-type:none;}
+.Menu UL LI{padding:0px;margin:2px 2px;}
+.Menu UL LI.Divider{line-height:4px;display:block;height:4px;overflow:hidden;}
+BODY.IE_M6 .Menu UL LI.Divider{height:auto;overflow:auto;}
+.Menu UL LI.Divider DIV{margin:2px 2px;height:2px;border:solid 0px #FCFCFC;border-bottom:solid 1px #CCC;overflow:hidden;position:relative;top:-2px;}
+BODY.IE_M6 .Menu UL LI.Divider DIV{margin:auto;height:1px;position:static;left:auto;top:auto;}
+.Menu .Disabled A{color:#BBB;}
+.Menu .Selected A{border:solid 1px #83AADA;background-color:#DDECFE;}
+.Menu A{color:#444 !important;white-space:nowrap;text-overflow:ellipsis;padding:2px 5px 4px 5px;border:solid 1px #FCFCFC;width:auto;display:block;position:relative;z-index:1;}
+.IE_M6 .Menu A{height:100%;}
+.Menu A:hover{border:solid 1px #BBD8FB;background-color:#F3F7FD;text-decoration:none;}
