@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-slim
+FROM openjdk:19-ea-5-jdk-alpine3.15
 WORKDIR application
 COPY ./pom.xml ./pom.xml
 COPY mvnw .
