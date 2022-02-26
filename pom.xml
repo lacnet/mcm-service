@@ -82,13 +82,13 @@
         <message>Maven artifacts for ${project.version}</message>
         <noJekyll>true</noJekyll>
         <outputDirectory>${project.build.directory}</outputDirectory>
-        <branch>refs/heads/<<em>Branch-Name</em>></branch>
+        <branch>refs/heads/master</branch>
         <includes>
             <include>**/*</include>
         </includes>
         <merge>true</merge>
-        <repositoryName><<em>Repo-Name</em>></repositoryName>
-        <repositoryOwner><<em>Repo-Owner</em>></repositoryOwner>
+        <repositoryName>Munchkin</repositoryName>
+        <repositoryOwner>Lacnet</repositoryOwner>
         <server>github</server>
     </configuration>
     <executions>
