@@ -19,6 +19,37 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+
+<scm>
+    <connection>scm:git:https://gitbox.apache.org/repos/asf/maven.git</connection>
+    <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/maven.git</developerConnection>
+    <url>https://github.com/apache/maven/tree/${project.scm.tag}</url>
+    <tag>master</tag>
+  </scm>
+  <issueManagement>
+    <system>jira</system>
+    <url>https://issues.apache.org/jira/browse/MNG</url>
+  </issueManagement>
+
+  <ciManagement>
+    <system>Jenkins</system>
+    <url>https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/</url>
+  </ciManagement>
+
+<distributionManagement>
+   <repository>
+     <id>github</id>
+     <name>GitHub OWNER Apache Maven Packages</name>
+     <url>https://maven.pkg.github.com/OWNER/REPOSITORY</url>
+   </repository>
+</distributionManagement>
+
+  <contributors>
+    <contributor>
+      <name>Jonathan LACROIX</name>
+    </contributor>
+</contributors>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
