@@ -1,0 +1,31 @@
+# Mongo docker image
+version: '3.7'
+services:
+  mongo:
+    image: 'mongo:4.4.0-rc8-bionic'
+    restart: on-failure
+    ports:
+      - 27017:27017
+    volumes:
+      - ./.mongo-volume:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mcm_user
+      MONGO_INITDB_ROOT_PASSWORD: XbTEWQj29qpFEyWsjaA9fZCxgMhbkSNn
+      MONGO_INITDB_DATABASE: mcm
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_AUTH_DATABASE: admin
+      ME_CONFIG_MONGODB_AUTH_USERNAME: mcm_user
+      ME_CONFIG_MONGODB_AUTH_PASSWORD: XbTEWQj29qpFEyWsjaA9fZCxgMhbkSNn
+      ME_CONFIG_BASICAUTH_USERNAME: mcm_user
+      ME_CONFIG_BASICAUTH_PASSWORD: XbTEWQj29qpFEyWsjaA9fZCxgMhbkSNn
+      ME_CONFIG_MONGODB_ADMINUSERNAME: mcm_user
+      ME_CONFIG_MONGODB_ADMINPASSWORD: XbTEWQj29qpFEyWsjaA9fZCxgMhbkSNn
+    depends_on:
+      - mongo

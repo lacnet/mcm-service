@@ -1,0 +1,45 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: mcm
+      username: mcm_user
+      password: XbTEWQj29qpFEyWsjaA9fZCxgMhbkSNn
+      authentication-database: admin
+# Change the uat and prod profiles
+server:
+  port: 8083
+---
+spring:
+  profiles: unit_test
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: mcm
+      username: mcm_user
+      password: XbTEWQj29qpFEyWsjaA9fZCxgMhbkSNn
+      authentication-database: admin
+server:
+  port: 8083
+---
+spring:
+  profiles: prod
+  data:
+    mongodb:
+      host: lacnet.pluob.mongodb.net
+      database: mcm
+      username: mcm_user
+      password: XbTEWQj29qpFEyWsjaA9fZCxgMhbkSNn
+#Fri Aug 27 14:16:08 SGT 2021
+okta:
+  oauth2:
+    issuer: https\://dev-5923528.okta.com/oauth2/default
+    client-id: 0oa1l2bcj7Ie2Mik15d7
+    client-secret: 9BJkQ_wNFhHpcgUlx-GDcqTr-chIiP79e77VgORR

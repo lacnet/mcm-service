@@ -1,108 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.2</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.2</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
 
-	<groupId>fr.lacnet.munchkin</groupId>
-	<artifactId>mcm</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>mcm</name>
-	<description>Munchkin Card Management</description>
+    <groupId>fr.lacnet.munchkin</groupId>
+    <artifactId>mcm</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>mcm</name>
+    <description>Munchkin Card Management</description>
 
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
 
-<scm>
-    <connection>scm:git:https://gitbox.apache.org/repos/asf/maven.git</connection>
-    <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/maven.git</developerConnection>
-    <url>https://github.com/apache/maven/tree/${project.scm.tag}</url>
-    <tag>master</tag>
-  </scm>
-  <issueManagement>
-    <system>jira</system>
-    <url>https://issues.apache.org/jira/browse/MNG</url>
-  </issueManagement>
+    <scm>
+        <connection>scm:git:https://gitbox.apache.org/repos/asf/maven.git</connection>
+        <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/maven.git</developerConnection>
+        <url>https://github.com/apache/maven/tree/${project.scm.tag}</url>
+        <tag>master</tag>
+    </scm>
+    <issueManagement>
+        <system>jira</system>
+        <url>https://issues.apache.org/jira/browse/MNG</url>
+    </issueManagement>
 
-  <ciManagement>
-    <system>Jenkins</system>
-    <url>https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/</url>
-  </ciManagement>
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven/</url>
+    </ciManagement>
 
-<distributionManagement>
-   <repository>
-     <id>github</id>
-     <name>GitHub OWNER Apache Maven Packages</name>
-     <url>https://maven.pkg.github.com/lacnet/munchkin</url>
-   </repository>
-</distributionManagement>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/lacnet/munchkin</url>
+        </repository>
+    </distributionManagement>
 
-  <contributors>
-    <contributor>
-      <name>Jonathan LACROIX</name>
-    </contributor>
-</contributors>
+    <contributors>
+        <contributor>
+            <name>Jonathan LACROIX</name>
+        </contributor>
+    </contributors>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-mongodb</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
-		</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-rest</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
 
-<plugin>
-    <groupId>com.github.github</groupId>
-    <artifactId>site-maven-plugin</artifactId>
-    <version>0.12</version>
-    <configuration>
-        <message>Maven artifacts for ${project.version}</message>
-        <noJekyll>true</noJekyll>
-        <outputDirectory>${project.build.directory}</outputDirectory>
-        <branch>refs/heads/master</branch>
-        <includes>
-            <include>**/*</include>
-        </includes>
-        <merge>true</merge>
-        <repositoryName>Munchkin</repositoryName>
-        <repositoryOwner>Lacnet</repositoryOwner>
-        <server>github</server>
-    </configuration>
-    <executions>
-        <execution>
-            <goals>
-                <goal>site</goal>
-            </goals>
-            <phase>deploy</phase>
-        </execution>
-    </executions>
-</plugin>
-		</plugins>
-	</build>
-
-
-	
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.12</version>
+                <configuration>
+                    <message>Maven artifacts for ${project.version}</message>
+                    <noJekyll>true</noJekyll>
+                    <outputDirectory>${project.build.directory}</outputDirectory>
+                    <branch>refs/heads/master</branch>
+                    <includes>
+                        <include>**/*</include>
+                    </includes>
+                    <merge>true</merge>
+                    <repositoryName>Munchkin</repositoryName>
+                    <repositoryOwner>Lacnet</repositoryOwner>
+                    <server>github</server>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>deploy</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
