@@ -3,34 +3,40 @@ spring:
     active: dev
 ---
 spring:
-  profiles: dev
+  config:
+    activate:
+      on-profile: dev
   data:
     mongodb:
       host: localhost
       port: 27017
       database: mcm
-      username: mcm_user
-      password: XbTEWQj29qpFEyWsjaA9fZCxgMhbkSNn
+      username: devMongoRootUser
+      password: devMongoRootPassword
       authentication-database: admin
 # Change the uat and prod profiles
 server:
   port: 8083
 ---
 spring:
-  profiles: unit_test
+  config:
+    activate:
+      on-profile: uat
   data:
     mongodb:
       host: localhost
       port: 27017
       database: mcm
-      username: mcm_user
-      password: XbTEWQj29qpFEyWsjaA9fZCxgMhbkSNn
+      username: root
+      password: example
       authentication-database: admin
 server:
   port: 8083
 ---
 spring:
-  profiles: prod
+  config:
+    activate:
+      on-profile: prod
   data:
     mongodb:
       host: lacnet.pluob.mongodb.net
