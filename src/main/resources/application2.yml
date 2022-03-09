@@ -1,0 +1,76 @@
+spring:
+  application:
+    name: ${APPLICATION_NAME}
+  profiles:
+    active: ${ACTIVE_PROFILE}
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+        dialect: ${DIALECT}
+        ddl-auto: update
+        hbm2ddl.auto: create-drop
+        naming-strategy: ${NAMING_STRATEGY}
+        show-sql: true
+    database-platform: ${DATABASE_PLATFORM}
+    generate-ddl: false
+  jackson:
+    property-naming-strategy: CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES
+    serialization:
+      indent_output: true
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: ${DRIVER_CLASSNAME}
+  data:
+    mongodb:
+      host: ${MONGO_HOST}
+      port: ${MONGO_PORT}
+      database: ${MONGO_DATABASE}
+      username: ${MONGO_USER}
+      password: ${MONGO_PASSWORD}
+server:
+  port: ${SERVER_PORT}
+---
+spring:
+  config:
+    activate:
+      on-profile: staging
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: ${DRIVER_CLASSNAME}
+  data:
+    mongodb:
+      host: ${MONGO_HOST}
+      port: ${MONGO_PORT}
+      database: ${MONGO_DATABASE}
+      username: ${MONGO_USER}
+      password: ${MONGO_PASSWORD}
+server:
+  port: {SERVER_PORT}
+---
+spring:
+  config:
+    activate:
+      on-profile: production
+  data:
+    mongodb:
+      host: ${MONGO_HOST}
+      database: ${MONGO_DATABASE}
+      username: ${MONGO_USER}
+      password: ${MONGO_PASSWORD}
+---
+okta:
+  oauth2:
+    issuer: ${OKTA_ISSUER}
+    client-id: ${OKTA_CLIENTID}
+    client-secret: ${OKTA_CLIENTSECRET}

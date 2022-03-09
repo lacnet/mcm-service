@@ -10,15 +10,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>fr.lacnet.munchkin</groupId>
-    <artifactId>mcm</artifactId>
+    <groupId>fr.lacnet.mcm</groupId>
+    <artifactId>mcm-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mcm</name>
+    <name>mcm-service</name>
     <description>Munchkin Card Management</description>
-
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
 
     <scm>
         <connection>scm:git:https://gitbox.apache.org/repos/asf/maven.git</connection>
