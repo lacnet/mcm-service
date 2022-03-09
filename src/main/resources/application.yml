@@ -1,9 +1,0 @@
-spring:
-  data:
-    mongodb:
-      uri: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}:${MONGO_PORT}/${MONGO_DATABASE}
-okta:
-  oauth2:
-    issuer: ${OKTA_ISSUER}
-    client-id: ${OKTA_CLIENTID}
-    client-secret: ${OKTA_CLIENTSECRET}
