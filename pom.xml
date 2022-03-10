@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -7,7 +8,6 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.5.2</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>fr.lacnet.mcm</groupId>
@@ -16,12 +16,30 @@
     <name>mcm-service</name>
     <description>Munchkin Card Management</description>
 
+    <url>https://munchkin.lacnet.fr</url>
+    <inceptionYear>2012</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>L@c.Net</name>
+        <url>https://lacnet.fr/</url>
+    </organization>
+
     <scm>
         <connection>scm:git:https://gitbox.apache.org/repos/asf/maven.git</connection>
         <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/maven.git</developerConnection>
         <url>https://github.com/apache/maven/tree/${project.scm.tag}</url>
         <tag>master</tag>
     </scm>
+
     <issueManagement>
         <system>jira</system>
         <url>https://issues.apache.org/jira/browse/MNG</url>
@@ -38,13 +56,80 @@
             <name>GitHub OWNER Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/lacnet/munchkin</url>
         </repository>
+        <!--
+        <repository>
+            <id>assemblaReleases</id>
+            <name>assemblaReleases</name>
+            <url>https://subversion.assembla.com/svn/munchkin-parent-pom/repositories/releases/</url>
+        </repository>
+         -->
+        <!-- use the following if you ARE using a snapshot version. -->
+        <!--
+<snapshotRepository>
+    <id>assemblaSnapshots</id>
+    <name>assemblaSnapshots</name>
+    <url>https://subversion.assembla.com/svn/munchkin-parent-pom/repositories/snapshots/</url>
+</snapshotRepository>
+         -->
     </distributionManagement>
+
+    <developers>
+        <developer>
+            <id>jlacroix</id>
+            <name>Jonathan LACROIX</name>
+            <url>https://lacnet.fr/profiles/jlacroix</url>
+            <email>jlacroix@lacnet.fr</email>
+            <organization>L@c.Net</organization>
+            <organizationUrl>https://lacnet.fr/</organizationUrl>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>-6</timezone>
+            <properties>
+                <picUrl>https://lacnet.fr/profiles/jlacroix</picUrl>
+            </properties>
+        </developer>
+    </developers>
 
     <contributors>
         <contributor>
-            <name>Jonathan LACROIX</name>
+            <name>Melanie AMPRIMO</name>
+            <email>mamprimo@lacnet.fr</email>
+            <url>https://lacnet.fr/profiles/mamprimo</url>
+            <organization>L@c.Net</organization>
+            <organizationUrl>https://lacnet.fr/</organizationUrl>
+            <roles>
+                <role>tester</role>
+            </roles>
+            <timezone>-6</timezone>
+            <properties>
+                <gtalk>amprimo.melanie@gmail.com</gtalk>
+            </properties>
         </contributor>
     </contributors>
+
+    <mailingLists>
+        <mailingList>
+            <name>Munchkin Dev</name>
+            <subscribe>dev-subscribe@munchkin.lacnet.fr</subscribe>
+            <unsubscribe>dev-unsubscribe@munchkin.lacnet.fr</unsubscribe>
+            <post>-</post>
+            <archive>https://www.mail-archive.com/dev%munchkin.lacnet.fr/</archive>
+        </mailingList>
+        <mailingList>
+            <name>Munchkin Commits</name>
+            <subscribe>commits-subscribe@assembla.com/code/munchkin-parent-pom/subversion/commits</subscribe>
+            <unsubscribe>commits-unsubscribe@assembla.com/code/munchkin-parent-pom/subversion/commits</unsubscribe>
+            <post>-</post>
+            <archive>https://munchkin.lacnet.fr/archive%parent-pom</archive>
+        </mailingList>
+    </mailingLists>
+
+    <properties>
+        <!-- gitHub server corresponds to entry in ~/.m2/settings.xml -->
+        <github.global.server>github</github.global.server>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -61,6 +146,13 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.jmock</groupId>
+            <artifactId>jmock-junit4</artifactId>
+            <version>2.5.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -71,23 +163,56 @@
             </plugin>
 
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <enableRulesSummary>false</enableRulesSummary>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.atlassian.maven.plugins</groupId>
+                <artifactId>maven-clover2-plugin</artifactId>
+                <version>4.0.6</version>
+                <configuration>
+                    <excludes>
+                        <exclude>fr.lacnet.munchkin.**/*Test*</exclude>
+                    </excludes>
+                    <targetPercentage>100%</targetPercentage>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>instrument</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>com.github.github</groupId>
                 <artifactId>site-maven-plugin</artifactId>
                 <version>0.12</version>
                 <configuration>
-                    <message>Maven artifacts for ${project.version}</message>
-                    <noJekyll>true</noJekyll>
-                    <outputDirectory>${project.build.directory}</outputDirectory>
-                    <branch>refs/heads/master</branch>
+                    <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
+                    <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
+                    <outputDirectory>${project.build.directory}
+                    </outputDirectory> <!-- matches distribution management repository url above -->
+                    <branch>refs/heads/master</branch>                      <!-- remote branch name -->
                     <includes>
                         <include>**/*</include>
                     </includes>
+                    <repositoryName>munchkin</repositoryName>      <!-- github repo name -->
+                    <repositoryOwner>lacnet</repositoryOwner>    <!-- github username -->
+
                     <merge>true</merge>
-                    <repositoryName>Munchkin</repositoryName>
-                    <repositoryOwner>Lacnet</repositoryOwner>
+
                     <server>github</server>
                 </configuration>
                 <executions>
+                    <!-- run site-maven-plugin's 'site' target as part of the build's normal
+                        'deploy' phase -->
                     <execution>
                         <goals>
                             <goal>site</goal>
@@ -98,4 +223,30 @@
             </plugin>
         </plugins>
     </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.2.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.1.2</version>
+            </plugin>
+            <plugin>
+                <groupId>com.atlassian.maven.plugins</groupId>
+                <artifactId>maven-clover2-plugin</artifactId>
+                <version>4.0.6</version>
+                <configuration>
+                    <generateHtml>true</generateHtml>
+                    <generatePdf>false</generatePdf>
+                    <generateXml>false</generateXml>
+                    <generateHistorical>true</generateHistorical>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>
