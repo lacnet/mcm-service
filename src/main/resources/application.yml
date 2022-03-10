@@ -1,16 +1,4 @@
-server:
-  port: ${SERVER_PORT}
 spring:
   data:
     mongodb:
-      host: ${MONGO_HOST}
-      port: ${MONGO_PORT}
-      database: ${MONGO_DATABASE}
-      username: ${MONGO_USER}
-      password: ${MONGO_PASSWORD}
       uri: ${SPRING_DATA_MONGODB_URI}
-okta:
-  oauth2:
-    issuer: ${OKTA_OAUTH2_ISSUER}
-    client-id: ${OKTA_OAUTH2_CLIENTID}
-    client-secret: ${OKTA_OAUTH2_CLIENTSECRET}
