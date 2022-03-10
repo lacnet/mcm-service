@@ -11,7 +11,7 @@ public class Gnome extends AbstractRace {
      *
      * @param name
      */
-    protected Gnome(String name) {
+    public Gnome(String name) {
         isGnone = true;
     }
 

@@ -1,6 +1,5 @@
 package fr.lacnet.munchkin.mcm.ext4.card.door.race;
 
-import fr.lacnet.munchkin.mcm.card.door.AbstractDoor;
 import fr.lacnet.munchkin.mcm.card.door.monster.Monster;
 
 /**
