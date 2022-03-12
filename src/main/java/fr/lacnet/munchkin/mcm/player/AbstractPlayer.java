@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import fr.lacnet.munchkin.mcm.CharacterLevel;
 import fr.lacnet.munchkin.mcm.FightingLevel;
 import fr.lacnet.munchkin.mcm.card.Card;
 import fr.lacnet.munchkin.mcm.card.treasure.item.Item;

@@ -1,7 +1,5 @@
 package fr.lacnet.munchkin.mcm.ext4.card.door.race;
 
-import fr.lacnet.munchkin.mcm.card.door.race.Race;
-
 /**
  * @author jla
  */

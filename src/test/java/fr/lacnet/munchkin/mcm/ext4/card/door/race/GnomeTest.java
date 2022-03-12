@@ -5,9 +5,6 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-import fr.lacnet.munchkin.mcm.ext4.card.door.race.Gnome;
-import fr.lacnet.munchkin.mcm.ext4.card.door.race.Race;
-
 /**
  * 
  * @author jla
