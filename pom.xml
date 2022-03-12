@@ -131,9 +131,6 @@
         <github.global.server>github</github.global.server>
 
         <java.version>17</java.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-
         <docker.image.prefix>lacnet</docker.image.prefix>
     </properties>
 
