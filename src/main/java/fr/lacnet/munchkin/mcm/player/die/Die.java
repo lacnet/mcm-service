@@ -8,13 +8,13 @@ package fr.lacnet.munchkin.mcm.player.die;
 public interface Die {
 	/**
 	 * 
-	 * @return
+	 * @return Integer
 	 */
 	Integer roll();
 
 	/**
 	 * 
-	 * @param sidedDie
+	 * @param sidedDie Integer
 	 */
 	void setSidedDie(final Integer sidedDie);
 }

@@ -1,4 +1,3 @@
-
 package fr.lacnet.munchkin;
 
 import org.springframework.boot.SpringApplication;

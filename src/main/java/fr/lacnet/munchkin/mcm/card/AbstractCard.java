@@ -1,17 +1,17 @@
 package fr.lacnet.munchkin.mcm.card;
 
+import lombok.Getter;
+
 /**
  * 
  * @author jlacroix
  * 
  */
+@Getter
 public abstract class AbstractCard implements Card {
-	String name;
+	private final String name;
 
-	/**
-	 * {@inheritDoc}
-	 */
-	public String getName() {
-		return name;
+	protected AbstractCard(final String name) {
+		this.name = name;
 	}
 }

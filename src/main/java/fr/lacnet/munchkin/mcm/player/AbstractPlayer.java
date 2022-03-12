@@ -11,12 +11,16 @@ import fr.lacnet.munchkin.mcm.card.treasure.item.Item;
 import fr.lacnet.munchkin.mcm.dealer.Dealer;
 import fr.lacnet.munchkin.mcm.party.Party;
 import fr.lacnet.munchkin.mcm.player.die.Die;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 
  * @author jlacroix
  * 
  */
+@Getter
+@Setter
 public abstract class AbstractPlayer implements Player {
 	/**
 	 * 
@@ -38,8 +42,8 @@ public abstract class AbstractPlayer implements Player {
 	 */
 	private Collection<Card> inPlay;
 
-	/***
-	 * *
+	/**
+	 *
 	 */
 	private LevelTracker levelTracker;
 
@@ -56,14 +60,14 @@ public abstract class AbstractPlayer implements Player {
 	/**
 	 * 
 	 */
-	private final Collection<Card> yourHand = new ArrayList<Card>(
+	private final Collection<Card> yourHand = new ArrayList<>(
 			AbstractPlayer.HAND_SIZE);
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public void fightTheMonster() {
-		// TODO Auto-generated method stub
+		System.out.println("fightTheMonster");
 	}
 
 	/**
@@ -77,49 +81,6 @@ public abstract class AbstractPlayer implements Player {
 	/**
 	 * {@inheritDoc}
 	 */
-	public CharacterLevel getCharacterLevel() {
-		return getLevelTracker().getCharacterLevel();
-	}
-
-	/**
-	 * {@inheritDoc} Getter of the property <tt>dealer</tt>
-	 * 
-	 * @return Returns the dealer.
-	 */
-	public Dealer getDealer() {
-		return dealer;
-	}
-
-	/**
-	 * {@inheritDoc} Getter of the property <tt>fightingLevel</tt>
-	 * 
-	 * @return Returns the fightingLevel.
-	 */
-	public FightingLevel getFightingLevel() {
-		return fightingLevel;
-	}
-
-	/**
-	 * Getter of the property <tt>levelTracker</tt>
-	 * 
-	 * @return Returns the levelTracker.
-	 */
-	private LevelTracker getLevelTracker() {
-		return levelTracker;
-	}
-
-	/**
-	 * Getter of the property <tt>sixSidedDie</tt>
-	 * 
-	 * @return Returns the sixSidedDie.
-	 */
-	private Die getSixSidedDie() {
-		return sixSidedDie;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
 	public Collection<Card> inPlay() {
 		return inPlay;
 	}
@@ -128,12 +89,14 @@ public abstract class AbstractPlayer implements Player {
 	 * {@inheritDoc}
 	 */
 	public void kickingDownTheDoor() {
+		System.out.println("fightTheMonster");
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public void look4Trouble() {
+		System.out.println("look4Trouble");
 	}
 
 	/**
@@ -159,19 +122,10 @@ public abstract class AbstractPlayer implements Player {
 	}
 
 	/**
-	 * {@inheritDoc} Setter of the property <tt>dealer</tt>
-	 * 
-	 * @param dealer
-	 *            The dealer to set.
-	 */
-	public void setDealer(final Dealer dealer) {
-		this.dealer = dealer;
-	}
-
-	/**
 	 * {@inheritDoc}
 	 */
 	public void tradeItems(final List<Item> items) {
+		System.out.println("look4Trouble");
 	}
 
 	/**

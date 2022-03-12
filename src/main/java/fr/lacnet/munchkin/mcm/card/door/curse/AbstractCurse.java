@@ -9,6 +9,10 @@ import fr.lacnet.munchkin.mcm.card.door.AbstractDoor;
  */
 public abstract class AbstractCurse extends AbstractDoor implements Curse {
 
+	protected AbstractCurse(final String name) {
+		super(name);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 */

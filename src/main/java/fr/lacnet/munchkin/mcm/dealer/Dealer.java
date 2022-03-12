@@ -17,15 +17,15 @@ public interface Dealer {
 
 	/**
 	 * 
-	 * @param nb2Draw
-	 * @return
+	 * @param nb2Draw Integer
+	 * @return List<Door>
 	 */
 	List<Door> dealDoors(final Integer nb2Draw);
 
 	/**
 	 * 
-	 * @param nb2Draw
-	 * @return
+	 * @param nb2Draw Integer
+	 * @return List<Treasure>
 	 */
 	List<Treasure> dealTreasures(final Integer nb2Draw);
 
@@ -33,7 +33,6 @@ public interface Dealer {
 	 * 
 	 * @param doors
 	 *            Door cards to discards
-	 * @return
 	 */
 	void discardDoors(final List<Door> doors);
 
@@ -41,27 +40,26 @@ public interface Dealer {
 	 * 
 	 * @param treasures
 	 *            Treasure cards to discards
-	 * @return
 	 */
 	void discardTreasures(final List<Treasure> treasures);
 
 	/**
 	 * 
-	 * @param card
-	 * @return
+	 * @param card Card
+	 * @return Card
 	 */
 	Card getFirstTrashedCardLike(final Card card);
 
 	/**
 	 * 
-	 * @return
+	 * @return Party
 	 */
 	Party getParty();
 
 	/**
 	 * 
-	 * @param items
-	 * @return
+	 * @param items List<Item>
+	 * @return Integer
 	 */
 	Integer sellItems(final List<Item> items);
 }

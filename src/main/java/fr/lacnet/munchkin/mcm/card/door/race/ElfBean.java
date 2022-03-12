@@ -9,8 +9,7 @@ public class ElfBean extends AbstractRace {
 	 *            String
 	 */
 	public ElfBean(final String aName) {
-		// super(aName);
-		// TODO Auto-generated constructor stub
+		super(aName);
 	}
 
 	/**
@@ -20,7 +19,6 @@ public class ElfBean extends AbstractRace {
 	 * @see Race#isDwarf
 	 */
 	public final boolean isDwarf() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
@@ -31,18 +29,13 @@ public class ElfBean extends AbstractRace {
 	 * @see Race#isElf
 	 */
 	public final boolean isElf() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @return boolean
-	 * @see Race#isHobbit
 	 */
 	public final boolean isHobbit() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 }

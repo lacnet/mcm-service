@@ -9,13 +9,13 @@ public interface FightingLevel extends Comparable<FightingLevel> {
 
 	/**
 	 * 
-	 * @return
+	 * @return Integer
 	 */
-	public Integer getValue();
+	Integer getValue();
 
 	/**
 	 * 
-	 * @param fightingLevel
+	 * @param fightingLevel Integer
 	 */
-	public void setValue(Integer fightingLevel);
+	void setValue(Integer fightingLevel);
 }

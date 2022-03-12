@@ -9,13 +9,13 @@ public interface CharacterLevel extends Comparable<CharacterLevel> {
 
 	/**
 	 * 
-	 * @return
+	 * @return Integer
 	 */
-	public Integer getValue();
+	Integer getValue();
 
 	/**
 	 * 
-	 * @param characterLevel
+	 * @param characterLevel Integer
 	 */
-	public void setValue(Integer characterLevel);
+	void setValue(Integer characterLevel);
 }

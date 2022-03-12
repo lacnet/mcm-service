@@ -13,8 +13,8 @@ public interface GoUpALevel extends Treasure {
 
 	/**
 	 * 
-	 * @param player
-	 * @throws UnsupportedGoUpALevelException
+	 * @param player Player
+	 * @throws UnsupportedGoUpALevelException unsuppported operation
 	 */
 	void oneMOre(final Player player) throws UnsupportedGoUpALevelException;
 }

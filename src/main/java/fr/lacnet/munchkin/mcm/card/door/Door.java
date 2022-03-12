@@ -11,7 +11,7 @@ public interface Door extends Card {
 
 	/**
 	 * 
-	 * @return
+	 * @return Boolean
 	 */
 	Boolean isImmediat();
 

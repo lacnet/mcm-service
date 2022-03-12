@@ -19,27 +19,27 @@ public interface Deck<C extends Card> {
 
 	/**
 	 * 
-	 * @param nb2Draw
-	 * @return
+	 * @param nb2Draw Integer
+	 * @return List<C>
 	 */
 	List<C> draw(final Integer nb2Draw);
 
 	/**
 	 * 
-	 * @param nb2Draw
-	 * @return
+	 * @param nb2Draw Integer
+	 * @return List<C>
 	 */
 	List<C> drawFromDiscards(final Integer nb2Draw);
 
 	/**
 	 * 
-	 * @param cards
+	 * @param cards List<? extends C>
 	 */
 	void fillWith(List<? extends C> cards);
 
 	/**
 	 * 
-	 * @return
+	 * @return Boolean
 	 */
 	Boolean isRunOver();
 

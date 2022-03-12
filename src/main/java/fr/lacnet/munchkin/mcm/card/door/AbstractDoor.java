@@ -9,6 +9,10 @@ import fr.lacnet.munchkin.mcm.card.AbstractCard;
  */
 public abstract class AbstractDoor extends AbstractCard implements Door {
 
+	protected AbstractDoor(final String name) {
+		super(name);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -18,23 +22,15 @@ public abstract class AbstractDoor extends AbstractCard implements Door {
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @return boolean
-	 * @see fr.lacnet.munchkin.mdm.card.Card#isDoor()
 	 */
 	public final boolean isDoor() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @return boolean
-	 * @see fr.lacnet.munchkin.mdm.card.Card#isTreasure()
 	 */
 	public final boolean isTreasure() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 }

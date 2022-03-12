@@ -96,7 +96,7 @@ public abstract class AbstractDealer implements Dealer {
 	 * {@inheritDoc}
 	 */
 	public Integer sellItems(final List<Item> items) {
-		Integer goldValue = 0;
+		int goldValue = 0;
 
 		for (final Item item : items) {
 			goldValue = goldValue + item.getGoldValue();

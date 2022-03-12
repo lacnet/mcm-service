@@ -14,11 +14,6 @@ public class MonsterTest extends AbstractDoorTest {
 	/**
      *
      */
-	private Type mockType;
-
-	/**
-     *
-     */
 	private Monster classUnderTest;
 
 	/**
@@ -30,8 +25,7 @@ public class MonsterTest extends AbstractDoorTest {
 		((MonsterBean) classUnderTest).setEffectiveLevel(0);
 		((MonsterBean) classUnderTest).setTreasureNumber(0);
 
-		mockType = getContext().mock(Type.class);
-		((MonsterBean) classUnderTest).setType(mockType);
+		((MonsterBean) classUnderTest).setType(getContext().mock(Type.class));
 	}
 
 	/**

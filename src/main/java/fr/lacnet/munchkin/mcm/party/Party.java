@@ -15,49 +15,49 @@ public interface Party {
 
 	/**
 	 * 
-	 * @return
+	 * @return Dealer
 	 */
 	Dealer getDealer();
 
 	/**
 	 * 
-	 * @return
+	 * @return Integer
 	 */
 	Integer getMaxNbPlayers();
 
 	/**
 	 * 
-	 * @return
+	 * @return CharacterLevel
 	 */
 	CharacterLevel getMinCharacterLevel2WinParty();
 
 	/**
 	 * 
-	 * @return
+	 * @return Integer
 	 */
 	Integer getMinGoldValue4OneLevelUp();
 
 	/**
 	 * 
-	 * @return
+	 * @return Integer
 	 */
 	Integer getMinNbPlayers();
 
 	/**
 	 * 
-	 * @return
+	 * @return Integer
 	 */
 	Integer getMinValue4SuccededRunaway();
 
 	/**
 	 * 
-	 * @return
+	 * @return List<Player>
 	 */
 	List<Player> getPlayers();
 
 	/**
 	 * 
-	 * @return
+	 * @return Boolean
 	 */
 	Boolean isOver();
 }

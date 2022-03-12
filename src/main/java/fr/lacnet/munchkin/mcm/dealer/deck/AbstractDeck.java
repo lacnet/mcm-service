@@ -16,14 +16,15 @@ public class AbstractDeck<C extends Card> implements Deck<C> {
 	/**
 	 * 
 	 */
-	private List<C> cards, discards;
+	private List<C> cards;
+	private List<C> discards;
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public void discards(final List<? extends C> discards) {
 		if (this.discards == null) {
-			this.discards = new ArrayList<C>();
+			this.discards = new ArrayList<>();
 		}
 		this.discards.addAll(discards);
 	}
@@ -59,12 +60,12 @@ public class AbstractDeck<C extends Card> implements Deck<C> {
 
 	/**
 	 * 
-	 * @param nb2Draw
-	 * @param pile
-	 * @return
+	 * @param nb2Draw Integer
+	 * @param pile List<C>
+	 * @return List<C>
 	 */
-	private final List<C> drawPile(final Integer nb2Draw, final List<C> pile) {
-		List<C> result = new ArrayList<C>(nb2Draw);
+	private List<C> drawPile(final Integer nb2Draw, final List<C> pile) {
+		List<C> result = new ArrayList<>(nb2Draw);
 
 		if (nb2Draw > 0) {
 			result = pile.subList(0, nb2Draw > pile.size() ? pile.size()
@@ -80,16 +81,15 @@ public class AbstractDeck<C extends Card> implements Deck<C> {
 	 */
 	public void fillWith(final List<? extends C> cards) {
 		if (this.cards == null) {
-			this.cards = new ArrayList<C>();
+			this.cards = new ArrayList<>();
 		}
 		this.cards.addAll(cards);
 	}
 
 	/**
 	 * 
-	 * @param nb2Draw
-	 * @param deck
-	 * @return
+	 * @param nb2Draw Integer
+	 * @return Integer
 	 */
 	private Integer getNbOfCards2DrawFromDiscards(final Integer nb2Draw) {
 		return has2DrawFromDiscards(nb2Draw) ? nb2Draw - cards.size() : 0;
@@ -97,9 +97,8 @@ public class AbstractDeck<C extends Card> implements Deck<C> {
 
 	/**
 	 * 
-	 * @param nb2Draw
-	 * @param deck
-	 * @return
+	 * @param nb2Draw Integer
+	 * @return Boolean
 	 */
 	private Boolean has2DrawFromDiscards(final Integer nb2Draw) {
 		return cards != null && nb2Draw > cards.size();

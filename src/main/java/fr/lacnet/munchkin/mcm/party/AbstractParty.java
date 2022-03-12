@@ -22,13 +22,11 @@ public abstract class AbstractParty implements Party {
 	/**
 	 * 
 	 */
-	private final List<Player> players = new ArrayList<Player>(
+	private final List<Player> players = new ArrayList<>(
 			getMaxNbPlayers());
 
 	/**
-	 * {@inheritDoc} Getter of the property <tt>dealer</tt>
-	 * 
-	 * @return Returns the dealer.
+	 * {@inheritDoc}
 	 */
 	public Dealer getDealer() {
 		return dealer;
@@ -38,7 +36,6 @@ public abstract class AbstractParty implements Party {
 	 * {@inheritDoc}
 	 */
 	public Integer getMaxNbPlayers() {
-		// TODO Auto-generated method stub
 		return 6;
 	}
 
@@ -46,18 +43,29 @@ public abstract class AbstractParty implements Party {
 	 * {@inheritDoc}
 	 */
 	public CharacterLevel getMinCharacterLevel2WinParty() {
-		// TODO Auto-generated method stub
-		final CharacterLevel level = null;
-		level.setValue(10);
+		return new CharacterLevel() {
 
-		return level;
+			@Override
+			public int compareTo(CharacterLevel o) {
+				return 0;
+			}
+
+			@Override
+			public Integer getValue() {
+				return 10;
+			}
+
+			@Override
+			public void setValue(Integer characterLevel) {
+				System.out.println("setValue");
+			}
+		};
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public Integer getMinGoldValue4OneLevelUp() {
-		// TODO Auto-generated method stub
 		return 1000;
 	}
 
@@ -65,7 +73,6 @@ public abstract class AbstractParty implements Party {
 	 * {@inheritDoc}
 	 */
 	public Integer getMinNbPlayers() {
-		// TODO Auto-generated method stub
 		return 3;
 	}
 
@@ -73,7 +80,6 @@ public abstract class AbstractParty implements Party {
 	 * {@inheritDoc}
 	 */
 	public Integer getMinValue4SuccededRunaway() {
-		// TODO Auto-generated method stub
 		return 4;
 	}
 

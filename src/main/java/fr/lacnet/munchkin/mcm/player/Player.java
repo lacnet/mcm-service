@@ -23,19 +23,19 @@ public interface Player {
 
 	/**
 	 * 
-	 * @param nbLevelGained
+	 * @param nbLevelGained Integer
 	 */
 	void gainLevel(final Integer nbLevelGained);
 
 	/**
 	 * 
-	 * @return
+	 * @return CharacterLevel
 	 */
 	CharacterLevel getCharacterLevel();
 
 	/**
 	 * 
-	 * @return
+	 * @return Dealer
 	 */
 	Dealer getDealer();
 
@@ -48,7 +48,7 @@ public interface Player {
 
 	/**
 	 * 
-	 * @return
+	 * @return Collection<Card>
 	 */
 	Collection<Card> inPlay();
 
@@ -73,14 +73,12 @@ public interface Player {
 	 * 
 	 * @param items
 	 *            that the player want to sell
-	 * @return the number of level gained by the player by selling the list of
-	 *         items
 	 */
 	void sellItems(List<Item> items);
 
 	/**
 	 * 
-	 * @param dealer
+	 * @param dealer Dealer
 	 */
 	void setDealer(final Dealer dealer);
 
@@ -94,7 +92,7 @@ public interface Player {
 
 	/**
 	 * 
-	 * @return
+	 * @return Collection<Card>
 	 */
 	Collection<Card> yourHand();
 }

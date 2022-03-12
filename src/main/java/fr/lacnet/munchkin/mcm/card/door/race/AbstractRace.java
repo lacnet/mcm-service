@@ -6,11 +6,12 @@ import fr.lacnet.munchkin.mcm.card.door.AbstractDoor;
  * @author jlacroix
  */
 public abstract class AbstractRace extends AbstractDoor implements Race {
+	protected AbstractRace(final String name) {
+		super(name);
+	}
+
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @return boolean
-	 * @see fr.lacnet.munchkin.mdm.card.donjon.Donjon#isBonus()
 	 */
 	public final boolean isBonus() {
 		return false;
@@ -18,9 +19,6 @@ public abstract class AbstractRace extends AbstractDoor implements Race {
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @return boolean
-	 * @see fr.lacnet.munchkin.mdm.card.donjon.Donjon#isClass()
 	 */
 	public final boolean isClass() {
 		return false;
@@ -28,9 +26,6 @@ public abstract class AbstractRace extends AbstractDoor implements Race {
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @return boolean
-	 * @see fr.lacnet.munchkin.mdm.card.donjon.Donjon#isCurse()
 	 */
 	public final boolean isCurse() {
 		return false;
@@ -38,9 +33,6 @@ public abstract class AbstractRace extends AbstractDoor implements Race {
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @return boolean
-	 * @see fr.lacnet.munchkin.mdm.card.donjon.Donjon#isMonster()
 	 */
 	public final boolean isMonster() {
 		return false;
@@ -48,9 +40,6 @@ public abstract class AbstractRace extends AbstractDoor implements Race {
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @return boolean
-	 * @see fr.lacnet.munchkin.mdm.card.donjon.Donjon#isRace()
 	 */
 	public final boolean isRace() {
 		return true;

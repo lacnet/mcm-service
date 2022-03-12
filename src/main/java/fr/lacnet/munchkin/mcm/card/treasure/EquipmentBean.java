@@ -9,8 +9,7 @@ public class EquipmentBean extends AbstractTreasure {
 	 *            String
 	 */
 	public EquipmentBean(final String aName) {
-		// super(aName);
-		// TODO Auto-generated constructor stub
+		super(aName);
 	}
 
 	/**
@@ -20,7 +19,6 @@ public class EquipmentBean extends AbstractTreasure {
 	 * @see Treasure#isEquipment()
 	 */
 	public final boolean isEquipment() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
@@ -31,7 +29,6 @@ public class EquipmentBean extends AbstractTreasure {
 	 * @see Treasure#isPotion()
 	 */
 	public final boolean isPotion() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 }

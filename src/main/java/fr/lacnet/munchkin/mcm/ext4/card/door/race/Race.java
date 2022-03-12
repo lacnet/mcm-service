@@ -10,7 +10,7 @@ import fr.lacnet.munchkin.mcm.card.door.monster.Monster;
 public interface Race extends fr.lacnet.munchkin.mcm.card.door.race.Race{
 	/**
 	 * 
-	 * @return
+	 * @return boolean
 	 */
-	public boolean isGnoneFor(Monster aMonster);
+	boolean isGnoneFor(Monster aMonster);
 }

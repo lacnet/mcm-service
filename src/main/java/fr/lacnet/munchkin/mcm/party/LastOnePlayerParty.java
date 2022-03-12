@@ -15,7 +15,7 @@ public class LastOnePlayerParty extends AbstractParty {
 	 */
 	public Boolean isOver() {
 		final Iterator<Player> playerIt = getPlayers().iterator();
-		Integer result = 0;
+		int result = 0;
 
 		while (playerIt.hasNext() && getPlayers().size() == result + 1) {
 			if (getMinCharacterLevel2WinParty().equals(

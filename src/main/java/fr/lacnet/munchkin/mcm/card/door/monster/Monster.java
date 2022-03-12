@@ -14,31 +14,31 @@ public interface Monster extends Door {
 
 	/**
 	 * 
-	 * @param player
+	 * @param player Player
 	 */
 	void executeBadStuff(Player player);
 
 	/**
 	 * 
-	 * @return
+	 * @return FightingLevel
 	 */
 	FightingLevel getFightingLevel();
 
 	/**
 	 * 
-	 * @return
+	 * @return Integer
 	 */
 	Integer getLevelGained();
 
 	/**
 	 * 
-	 * @return
+	 * @return Integer
 	 */
 	Integer getWonTreasureCards();
 
 	/**
 	 * 
-	 * @param fightingLevel
+	 * @param fightingLevel FightingLevel
 	 */
 	void setFightingLevel(final FightingLevel fightingLevel);
 

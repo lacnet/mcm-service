@@ -12,84 +12,61 @@ public class MonsterBean extends AbstractDoor implements Monster {
 	/**
      *
      */
-	private int effectiveLevel, treasureNumber = 0;
+	private int effectiveLevel = 0;
+	private int treasureNumber = 0;
 
 	/**
      *
      */
-	private Type type = null;
+	private Type type;
 
 	/**
 	 * @param aName
 	 *            String
 	 */
 	public MonsterBean(final String aName) {
-		// super(aName);
+		super(aName);
 	}
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @return boolean
-	 * @see fr.lacnet.munchkin.mdm.card.donjon.Donjon#isBonus()
 	 */
 	public final boolean isBonus() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @return boolean
-	 * @see fr.lacnet.munchkin.mdm.card.donjon.Donjon#isClass()
 	 */
 	public final boolean isClass() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @return boolean
-	 * @see fr.lacnet.munchkin.mdm.card.donjon.Donjon#isCurse()
 	 */
 	public final boolean isCurse() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @return boolean
-	 * @see fr.lacnet.munchkin.mdm.card.donjon.Donjon#isMonster()
 	 */
 	public final boolean isMonster() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @return boolean
-	 * @see fr.lacnet.munchkin.mdm.card.donjon.Donjon#isRace()
 	 */
 	public final boolean isRace() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @return int
-	 * @see Monster#getEffectiveLevel()
 	 */
 	public final int getEffectiveLevel() {
-		// TODO Auto-generated method stub
 		return effectiveLevel;
 	}
 
@@ -103,12 +80,8 @@ public class MonsterBean extends AbstractDoor implements Monster {
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @return int
-	 * @see Monster#getTreasureNumber()
 	 */
 	public final int getTreasureNumber() {
-		// TODO Auto-generated method stub
 		return treasureNumber;
 	}
 
@@ -122,12 +95,8 @@ public class MonsterBean extends AbstractDoor implements Monster {
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @return Type
-	 * @see Monster#getType()
 	 */
 	public final Type getType() {
-		// TODO Auto-generated method stub
 		return type;
 	}
 
@@ -141,8 +110,6 @@ public class MonsterBean extends AbstractDoor implements Monster {
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @see
 	 */
 	public void executeBadStuff(final Player player) {
 		// TODO Auto-generated method stub
@@ -151,8 +118,6 @@ public class MonsterBean extends AbstractDoor implements Monster {
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @see
 	 */
 	public FightingLevel getFightingLevel() {
 		// TODO Auto-generated method stub
@@ -161,8 +126,6 @@ public class MonsterBean extends AbstractDoor implements Monster {
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @see
 	 */
 	public Integer getLevelGained() {
 		// TODO Auto-generated method stub
@@ -171,8 +134,6 @@ public class MonsterBean extends AbstractDoor implements Monster {
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @see
 	 */
 	public Integer getWonTreasureCards() {
 		// TODO Auto-generated method stub
@@ -181,8 +142,6 @@ public class MonsterBean extends AbstractDoor implements Monster {
 
 	/**
 	 * (non-Javadoc).
-	 * 
-	 * @see
 	 */
 	public void setFightingLevel(final FightingLevel fightingLevel) {
 		// TODO Auto-generated method stub

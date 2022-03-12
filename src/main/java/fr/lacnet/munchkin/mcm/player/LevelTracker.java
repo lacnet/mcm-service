@@ -11,13 +11,13 @@ public interface LevelTracker {
 
 	/**
 	 * 
-	 * @return
+	 * @return CharacterLevel
 	 */
 	CharacterLevel getCharacterLevel();
 
 	/**
 	 * 
-	 * @param characterLevel
+	 * @param characterLevel CharacterLevel
 	 */
 	void setCharacterLevel(final CharacterLevel characterLevel);
 }

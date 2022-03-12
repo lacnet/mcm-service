@@ -9,17 +9,16 @@ public class Gnome extends AbstractRace {
 
     /**
      *
-     * @param name
+     * @param name String
      */
     public Gnome(String name) {
+        super(name);
+
         isGnone = true;
     }
 
     /**
      * (non-Javadoc).
-     *
-     * @return boolean
-     * @see Race#isDwarf
      */
     public final boolean isDwarf() {
         return true;
@@ -27,9 +26,6 @@ public class Gnome extends AbstractRace {
 
     /**
      * (non-Javadoc).
-     *
-     * @return boolean
-     * @see Race#isElf
      */
     public final boolean isElf() {
         return false;
@@ -37,9 +33,6 @@ public class Gnome extends AbstractRace {
 
     /**
      * (non-Javadoc).
-     *
-     * @return boolean
-     * @see Race#isHobbit
      */
     public final boolean isHobbit() {
         return false;
