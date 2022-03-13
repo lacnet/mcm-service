@@ -1,4 +1,3 @@
-
 package fr.lacnet.mcm.people;
 
 import java.util.List;
